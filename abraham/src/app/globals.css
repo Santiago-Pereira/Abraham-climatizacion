@@ -1,0 +1,86 @@
+/* mui main section styles */
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+}
+
+.btn-wpp {
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.7);
+  border-radius: 50%;
+  background-color: green;
+  padding: 0.5rem;
+  position: fixed;
+  right: 1.2rem;
+  bottom: 3rem;
+  z-index: 100;
+  transition: all 2s ease-out;
+}
+.btn-wpp:hover {
+  background-color: green;
+  transform: scale(1.1);
+}
+
+.underline {
+  position: relative;
+  color: #fffcfc;
+  text-decoration: none;
+}
+
+.underline:hover {
+  color: #6c6a6a;
+}
+
+.underline::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #f3f0f0;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.underline:hover::before {
+  transform: scaleX(1);
+}
+
+.banner {
+  background-image: url("https://res.cloudinary.com/ddfz8iwnf/image/upload/v1695768943/abraham/banner_igig65.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100vh;
+}
+
+.about {
+  margin-top: 3rem;
+}
+
+.about-img {
+  width: 100%;
+  height: 100vh;
+  background-image: url("https://res.cloudinary.com/ddfz8iwnf/image/upload/v1695770173/abraham/about-example_se6nxm.jpg");
+  background-size: cover;
+}
+
+.text {
+  height: 100vh;
+  width: 100%;
+}
+.about-text {
+  margin-top: 1.5rem;
+}
+
+a,
+ul,
+li {
+  text-decoration: none;
+  color: white;
+  list-style: none;
+}
