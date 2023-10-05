@@ -1,17 +1,28 @@
+import { Box } from "@mui/material";
 import About from "./components/About";
 import Banner from "./components/Banner";
 import Contact from "./components/Contact";
+import Marcas from "./components/Marcas";
 import Servicios from "./components/Servicios";
 import styles from "./page.module.css";
+import { Roboto } from "next/font/google";
+
+const roboto = Roboto({
+  weight: "400",
+  subsets: ["latin"],
+});
 
 export default function Home() {
   return (
-    <main className="main">
+    <main className={roboto.className}>
       <>
-        <Banner />
-        <About />
-        <Servicios />
-        <Contact />
+        <Box className={"main"}>
+          <Banner />
+          <About />
+          <Servicios />
+          <Contact />
+          <Marcas />
+        </Box>
       </>
     </main>
   );

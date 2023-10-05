@@ -61,7 +61,7 @@ export default function Servicios() {
           sx={{ display: "flex", justifyContent: "center", mt: "3rem" }}
         >
           {data.map((element) => (
-            <Grid item xs={12} md={2} key={element.title}>
+            <Grid item xs={12} sm={6} md={2} lg={2} key={element.title}>
               <Card sx={{ width: "100%" }}>
                 <CardActionArea>
                   <CardContent>

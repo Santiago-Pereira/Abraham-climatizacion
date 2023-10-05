@@ -64,7 +64,7 @@
 
 .about-img {
   width: 100%;
-  height: 100vh;
+  height: 100dvh;
   background-image: url("https://res.cloudinary.com/ddfz8iwnf/image/upload/v1695770173/abraham/about-example_se6nxm.jpg");
   background-size: cover;
 }
@@ -83,4 +83,8 @@ li {
   text-decoration: none;
   color: white;
   list-style: none;
+}
+
+.carousel-marcas {
+  width: 100%;
 }
