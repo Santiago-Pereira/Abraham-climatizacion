@@ -4,7 +4,7 @@ import Grid from "@mui/material/Grid";
 
 export default function About() {
   return (
-    <section className="about">
+    <section className="about" id="aboutUs">
       <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 0 }}>
         <Grid item xs={12} md={3}>
           <Box className="text">

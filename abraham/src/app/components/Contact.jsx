@@ -5,11 +5,41 @@ import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import MailIcon from "@mui/icons-material/Mail";
-import React from "react";
+import emailjs from "@emailjs/browser";
+import React, { useRef, useState } from "react";
 
 export default function Contact() {
+  const form = useRef(null);
+
+  const [open, setOpen] = useState(false);
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+    emailjs
+      .sendForm(
+        "service_bkkbiem",
+        "template_fokcy5f",
+        form.current,
+        "YzvruES_JgSeKWzW3"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          <Alert severity="success">
+            <AlertTitle>Mensaje enviado!</AlertTitle>
+            Su mensaje ha sido enviado con éxito, en breve nos pondremos en
+            contacto con ud. — <strong>Saludos!</strong>
+          </Alert>;
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+    form.current.reset();
+  };
+
   return (
-    <section>
+    <section id="contact">
       <Box>
         <Grid
           container
@@ -62,48 +92,48 @@ export default function Contact() {
               </Typography>
               <Box
                 component="form"
-                /*   ref={form} */
+                ref={form}
                 noValidate
-                /*   onSubmit={sendEmail} */
+                onSubmit={sendEmail}
                 sx={{ mt: 1 }}
               >
                 <TextField
                   margin="normal"
                   required
                   fullWidth
-                  id="user_name"
+                  id="nombre"
                   label="Ingrese su nombre"
                   type="text"
-                  name="user_name"
+                  name="nombre"
                   autoComplete="on"
                 />
                 <TextField
                   margin="normal"
                   required
                   fullWidth
-                  name="user_tel"
+                  name="telefono"
                   label="Ingrese su teléfono"
                   type="tel"
-                  id="user_tel"
+                  id="telefono"
                   autoComplete="on"
                 />
                 <TextField
                   margin="normal"
                   required
                   fullWidth
-                  id="user_email"
+                  id="email"
                   label="Ingrese su email"
-                  name="user_email"
+                  name="email"
                   autoComplete="on"
                 />
                 <TextField
                   margin="normal"
                   required
                   fullWidth
-                  id="message"
+                  id="consulta"
                   label="Mensaje"
                   multiline
-                  name="message"
+                  name="consulta"
                   rows={4}
                 />
                 <Button

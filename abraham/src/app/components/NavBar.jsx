@@ -14,9 +14,15 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
+import Link from "next/link";
 
 const drawerWidth = 240;
-const navItems = ["Inicio", "Sobre nosotros", "servicios", "Contacto"];
+const navItems = [
+  { title: "Inicio", url: "/" },
+  { title: "Sobre nosotros", url: "/#aboutUs" },
+  { title: "Servicios", url: "/#services" },
+  { title: "Contacto", url: "/#contact" },
+];
 
 export default function NavBar(props) {
   const { window } = props;
@@ -29,18 +35,19 @@ export default function NavBar(props) {
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
       <Divider />
-      <List>
-        {navItems.map((item) => (
-          <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: "center" }}>
-              <ListItemText primary={item} />
-            </ListItemButton>
+      <List onClick={handleDrawerToggle}>
+        {navItems.map((item, index) => (
+          <ListItem key={index} disablePadding>
+            <Link href={item.url} passHref>
+              <ListItemButton component="a">
+                <ListItemText primary={item.title} />
+              </ListItemButton>
+            </Link>
           </ListItem>
         ))}
       </List>
     </Box>
   );
-
   const container =
     window !== undefined ? () => window().document.body : undefined;
 
@@ -76,9 +83,11 @@ export default function NavBar(props) {
           </Box>
 
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
-            {navItems.map((item) => (
-              <Button className="underline" key={item} sx={{ color: "#fff" }}>
-                {item}
+            {navItems.map((item, index) => (
+              <Button className="underline" key={index} sx={{ color: "#fff" }}>
+                <Link key={index} href={item.url}>
+                  {item.title.toUpperCase()}
+                </Link>
               </Button>
             ))}
           </Box>

@@ -49,7 +49,7 @@ export default function Servicios() {
 
   return (
     <Box>
-      <section className="servicios-card">
+      <section className="servicios-card" id="services">
         <Typography variant="h4" sx={{ textAlign: "center", mt: "3rem" }}>
           Nuestros Servicios
         </Typography>

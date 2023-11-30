@@ -6,6 +6,7 @@ import Marcas from "./components/Marcas";
 import Servicios from "./components/Servicios";
 import styles from "./page.module.css";
 import { Roboto } from "next/font/google";
+import Obras from "./components/Obras";
 
 const roboto = Roboto({
   weight: "400",
@@ -22,6 +23,7 @@ export default function Home() {
           <Servicios />
           <Contact />
           <Marcas />
+          <Obras />
         </Box>
       </>
     </main>
