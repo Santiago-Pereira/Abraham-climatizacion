@@ -7,6 +7,8 @@ import TextField from "@mui/material/TextField";
 import MailIcon from "@mui/icons-material/Mail";
 import emailjs from "@emailjs/browser";
 import React, { useRef, useState } from "react";
+import Alert from "@mui/material/Alert";
+import AlertTitle from "@mui/material/AlertTitle";
 
 export default function Contact() {
   const form = useRef(null);
